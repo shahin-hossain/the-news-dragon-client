@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../../assets/logo.png'
 import moment from 'moment';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import user from '../../../assets/user.png'
 import Marquee from "react-fast-marquee";
 
 const Header = () => {
@@ -46,7 +47,7 @@ const Header = () => {
                             <Nav.Link href="#Career">Career</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Profile</Nav.Link>
+                            <img className="w-25 ms-auto" src={user} alt="" />
                             <Nav.Link eventKey={2} href="#memes">
                                 <Button variant="secondary">Login</Button>
                             </Nav.Link>

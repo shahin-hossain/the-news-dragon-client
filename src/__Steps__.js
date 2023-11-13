@@ -30,10 +30,37 @@
  * 2. LeftNav.jsx
  * 3. RightNav.jsx
  * 
- * ----------------
- * Dynamic Time
+ * ------------------------------------------------------------
+ * 
+ * ---------------------------Development Sequence---------------------------------
+ * Header style 
+ * - logo, title
+ * -------------
+ * Dynamic Time/Date
  * 
  * Library -
  * Moment JS : Install > npm install moment
  * ----------------
+ * React Marquee
+ * React Marque: install > npm install react-fast-marquee --save
+ *  
+ * --------------------- 
+ * Responsive bootstrap Nav bar
+ * ------------------------
+ * 
+ * ***Right side Component setup start***
+ * 
+ * ------
+ * Library -
+ * React Icons: Install > npm install react-icons --save
+ * --------
+ * login with
+ * ---------
+ * find us on
+ * ------------
+ * QZone component
+ * ----------
+ * card under Qzone component
+ * 
+ * 
  */
