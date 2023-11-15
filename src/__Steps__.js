@@ -62,5 +62,12 @@
  * ----------
  * card under Qzone component
  * 
- * 
+ * -------------
+ * server setup 
+ * --------------
+ *------------------ 
+ * Left Nav 
+ * ----------------
+ * -> fetch categories data from local server
+ *
  */
