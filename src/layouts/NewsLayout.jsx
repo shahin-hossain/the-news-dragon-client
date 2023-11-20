@@ -6,18 +6,14 @@ import { Col, Container, Row } from 'react-bootstrap';
 import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import RightNav from '../pages/Shared/RightNav/RightNav';
 
-const Main = () => {
+const NewsLayout = () => {
     return (
         <div>
             <Header></Header>
             {/* react-bootstrap থেকে container, Row, Col গুলো import করে নিতে হবে। */}
             <Container>
                 <Row>
-                    <Col lg={3}>
-                        <LeftNav></LeftNav>
-                    </Col>
-
-                    <Col lg={6}>
+                    <Col lg={9}>
                         <Outlet></Outlet>
                     </Col>
 
@@ -31,4 +27,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default NewsLayout;
