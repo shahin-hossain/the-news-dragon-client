@@ -70,4 +70,11 @@
  * ----------------
  * -> fetch categories data from local server
  *
+ * ---- news ----
+ * news layout
+ * news component
+ * news news route
+ * server news data create 
+ * send news data
+ * send news data category wise
  */
