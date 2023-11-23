@@ -77,4 +77,11 @@
  * server news data create 
  * send news data
  * send news data category wise
+ * -------
+ * style news card and react ratings
+ * readmore 
+ * display news details
+ * editor insight 
+ * left news card
+ * 
  */

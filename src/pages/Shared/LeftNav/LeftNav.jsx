@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import LeftNewsCard from '../../Home/LeftNewsCard/LeftNewsCard';
 
 const LeftNav = () => {
     // loader/useLoader use করা যায় যদি Route change হয়।
@@ -25,6 +26,7 @@ const LeftNav = () => {
                     </p>)
                 }
             </div>
+            <LeftNewsCard></LeftNewsCard>
         </div>
     );
 };

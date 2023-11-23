@@ -17,7 +17,7 @@ const NewsCard = ({ news }) => {
                     <Image style={{ width: '45px', height: '45px' }} src={author?.img} roundedCircle />
                     <div className='ms-3 flex-grow-1'>
                         <p className='mb-0 fw-bold'>{author?.name}</p>
-                        <p>{moment(author?.published_date).format('MMMM-D-YY')}</p>
+                        <p className='mb-0'>{moment(author?.published_date).format('MMMM-D-YY')}</p>
                     </div>
 
                     <div>
