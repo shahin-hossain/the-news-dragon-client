@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import moment from 'moment';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import user from '../../../assets/user.png'
 import Marquee from "react-fast-marquee";
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user.displayName)
     return (
         <Container className='mt-4'>
             <div className='text-center'>
@@ -42,14 +47,25 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link href="#features">Home</Nav.Link>
+                            <Nav.Link href="#features">
+                                <Link to='/'>Home</Link>
+                            </Nav.Link>
                             <Nav.Link href="#pricing">About</Nav.Link>
                             <Nav.Link href="#Career">Career</Nav.Link>
                         </Nav>
                         <Nav>
-                            <img className="w-25 ms-auto" src={user} alt="" />
+                            {user && <Nav.Link className='mb-0'>
+                                <FaUserCircle className='fs-1' />
+                            </Nav.Link>}
                             <Nav.Link eventKey={2} href="#memes">
-                                <Button variant="secondary">Login</Button>
+                                {
+                                    user ? <Button variant="secondary">logout</Button>
+                                        : <>
+                                            <Link to='/login'><Button variant="secondary" >Login</Button></Link>
+                                            <Link to='/signup'><Button variant="secondary" >Signup</Button></Link>
+                                        </>
+                                }
+
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

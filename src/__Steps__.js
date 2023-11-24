@@ -83,5 +83,8 @@
  * display news details
  * editor insight 
  * left news card
+ * ------
+ * nav bar
+ * authProvider
  * 
  */
