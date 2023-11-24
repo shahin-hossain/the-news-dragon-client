@@ -86,5 +86,13 @@
  * ------
  * nav bar
  * authProvider
+ * context api
+ * login /profile set
+ * ----
+ * navigation bar component
+ * login layout 
+ * login route
+ * login component 
+ * register component 
  * 
  */
