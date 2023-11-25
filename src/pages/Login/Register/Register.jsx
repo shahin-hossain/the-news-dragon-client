@@ -12,9 +12,9 @@ const Register = () => {
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        const photo = form.photo.value;
         // console.log(name, email, password, photo)
 
         createUser(email, password)
@@ -25,7 +25,6 @@ const Register = () => {
             .catch(error => {
                 console.log(error.message)
             })
-
     }
 
     return (

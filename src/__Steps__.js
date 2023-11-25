@@ -94,5 +94,11 @@
  * login route
  * login component 
  * register component 
+ * auth provider-
+ * signup, sign in with firebase
+ * auth state change
+ * sign out
+ * navigate to home after login
+ * private route
  * 
  */
