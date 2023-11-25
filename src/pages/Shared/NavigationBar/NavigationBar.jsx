@@ -15,8 +15,7 @@ const NavigationBar = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
 
-                            <Link to='/'>Home</Link>
-
+                            <Link to='/category/0'>Home</Link>
                             <Nav.Link href="#pricing">About</Nav.Link>
                             <Nav.Link href="#Career">Career</Nav.Link>
                         </Nav>
@@ -28,8 +27,8 @@ const NavigationBar = () => {
                             {
                                 user ? <Button variant="secondary">logout</Button>
                                     : <>
-                                        <Link to='/login'><Button variant="secondary" >Login</Button></Link>
-                                        <Link to='/signup'><Button variant="secondary" >Signup</Button></Link>
+                                        <Link to='/login'><Button variant="secondary" className='me-2'>Login</Button></Link>
+                                        <Link to='/register'><Button variant="secondary" >Register</Button></Link>
                                     </>
                             }
 
