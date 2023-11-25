@@ -2,19 +2,17 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
     const { user } = useContext(AuthContext);
-    /* const navigate = useNavigate();
-    if (!user) {
-        navigate('/login');
-    } */
-    return (
-        <div>
-            {children}
-        </div>
-    );
+    const location = useLocation();
+    // console.log(location)
+
+    if (user) {
+        return children;
+    }
+    return <Navigate state={{ from: location }} to='/login' replace></Navigate> //location কে  login route এর state এ সেট করা হয়েছে।
 };
 
 export default PrivateRoute;
@@ -24,5 +22,5 @@ export default PrivateRoute;
  * 1. check User is Logged in or not
  * 2. if user is logged in, then allow them to visit the route
  * 3. else redirect user to login page
- *  
+ *  4. setup the private router
  */

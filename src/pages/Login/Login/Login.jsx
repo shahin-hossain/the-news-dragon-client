@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
@@ -8,7 +8,10 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
 
     const navigate = useNavigate();
-
+    //page redirect করার জন্য location use করা হয়েছে।
+    const location = useLocation();
+    console.log(location)
+    const from = location.state?.from?.pathname || '/category/0';
 
     //signIn Handle
     const handleSignIn = event => {
@@ -16,7 +19,6 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-
         // console.log(email, password)
         //signIn function
         signIn(email, password)
@@ -24,7 +26,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 form.reset();
-                navigate('/category/0')
+                navigate(from, { replace: true }) // redirect route location -> user যে route থেকে login এ আসছে সে route এ user কে ফেরত পাঠানো।
             })
             .catch(error => {
                 console.log(error.message)
