@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { useState } from 'react';
 
 const Register = () => {
-
+    const [accepted, setAccepted] = useState(false);
     const { createUser } = useContext(AuthContext);
 
     //form handle for Create new User
@@ -26,6 +27,12 @@ const Register = () => {
                 console.log(error.message)
             })
     }
+    // terms & condition button checked করলে তাহলে Disable Register button Enable হবে।
+    const handleAccepted = (event) => {
+        setAccepted(event.target.checked);
+        console.log(event.target.checked)
+    }
+
 
     return (
         <Container className='mx-auto w-25'>
@@ -53,10 +60,14 @@ const Register = () => {
                 </Form.Group>
                 {/* Accept terms & conditions */}
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" name='accept' label="Accept Terms & Conditions" />
+                    <Form.Check
+                        onClick={handleAccepted}
+                        type="checkbox"
+                        name='accept'
+                        label={<>Accept <Link to='/terms'>Terms & Conditions</Link></>} />
                 </Form.Group>
                 {/* Register button */}
-                <Button variant="primary" type="submit">
+                <Button variant="primary" disabled={!accepted} type="submit">
                     Register
                 </Button>
                 <br />

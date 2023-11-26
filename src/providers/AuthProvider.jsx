@@ -11,13 +11,16 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     //new user create
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
     //existing user sign in
     const signIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
     //User authState Change
@@ -26,7 +29,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
             console.log('logged in user inside auth state observer', loggedUser)
-
+            setLoading(false)
         });
 
         return () => {
@@ -36,11 +39,14 @@ const AuthProvider = ({ children }) => {
 
     //sign out
     const logOut = () => {
+        setLoading(true)
         return signOut(auth);
     }
+
     //provider value
     const authInfo = {
         user,
+        loading,
         createUser,
         signIn,
         logOut,

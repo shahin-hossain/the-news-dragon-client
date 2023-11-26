@@ -100,5 +100,7 @@
  * sign out
  * navigate to home after login
  * private route
+ * reload issue solved
+ * terms & condition
  * 
  */
