@@ -10,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
     //page redirect করার জন্য location use করা হয়েছে।
     const location = useLocation();
-    console.log(location)
+    // console.log(location)
     const from = location.state?.from?.pathname || '/category/0';
 
     //signIn Handle
@@ -24,7 +24,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 form.reset();
                 navigate(from, { replace: true }) // redirect route location -> user যে route থেকে login এ আসছে সে route এ user কে ফেরত পাঠানো।
             })

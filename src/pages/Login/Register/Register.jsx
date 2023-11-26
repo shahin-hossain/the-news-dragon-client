@@ -30,7 +30,7 @@ const Register = () => {
     // terms & condition button checked করলে তাহলে Disable Register button Enable হবে।
     const handleAccepted = (event) => {
         setAccepted(event.target.checked);
-        console.log(event.target.checked)
+        // console.log(event.target.checked)
     }
 
 
