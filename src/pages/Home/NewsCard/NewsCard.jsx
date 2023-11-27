@@ -1,9 +1,11 @@
 import moment from 'moment/moment';
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaEye, FaRegBookmark, FaRegStar, FaShareNodes, FaStar } from 'react-icons/fa6'
-import Rating from 'react-rating';
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
 
 const NewsCard = ({ news }) => {
     // console.log(props.news)
@@ -33,15 +35,16 @@ const NewsCard = ({ news }) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-muted d-flex">
-                    <div className='flex-grow-1'>
+                    <div className='flex-grow-1 d-flex'>
                         {/* Rating দেওয়ার জন্য rating placeholder use করা হয়েছে। */}
+
                         <Rating
-                            placeholderRating={rating.number}
-                            readonly
-                            emptySymbol={<FaRegStar className='text-warning' />}
-                            placeholderSymbol={<FaStar className='text-warning' />}
-                            fullSymbol={<FaStar />}
+                            style={{ maxWidth: 100, width: '100%' }}
+                            value={rating?.number}
+                            readOnly
                         />
+
+
                         <span className='ms-2'>{rating?.number}</span>
                     </div>
                     <div>
