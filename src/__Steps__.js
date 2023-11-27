@@ -104,4 +104,10 @@
  * terms & condition
  * ------
  * Environment Variable
+ * ------
+ * deploy server to vercel
+ * deploy client to firebase
+ * local host replace/update
+ * -----
+ * 
  */
