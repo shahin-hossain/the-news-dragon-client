@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
 
@@ -11,6 +12,7 @@ const Login = () => {
     //page redirect করার জন্য location use করা হয়েছে।
     const location = useLocation();
     // console.log(location)
+    useTitle('Login')
     const from = location.state?.from?.pathname || '/category/0';
 
     //signIn Handle

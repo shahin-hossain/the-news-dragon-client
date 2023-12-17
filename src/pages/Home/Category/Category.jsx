@@ -3,10 +3,12 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import NewsCard from '../NewsCard/NewsCard';
+import useTitle from '../../../hooks/useTitle';
 
 const Category = () => {
     const { id } = useParams(); //route এর dynamic id টা পাওয়ার জন্য।
     const categoryNews = useLoaderData()
+    useTitle('Category')
     // console.log(categoryNews)
     return (
         <div>
